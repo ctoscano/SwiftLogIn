@@ -14,27 +14,12 @@ window.print = function (str, level) {
     $('#log').append($('<pre>').text(str));
 };
 
-$('#camera-btn').click(function (e) {
-    $('#camera-input').click();
-});
-
-$('#camera-input').change(function() {
-    var form = $('form');
-    var postData = postData = new FormData(form[0]);
-    $.post(form.attr('action'), function (response) {
-        print(response);
-        $.mobile.changePage("#page2");
-    });
-    $.mobile.changePage("#page2");
-});
-
-
-var grid = $('.ui-grid-b');
+*/
 
 [
 //'touchstart',
-'touchmove',
-'touchenter',
+//'touchmove',
+//'touchenter',
 //'touchend',
 //'touchcancel',
 //'click',
@@ -86,13 +71,14 @@ var end = function (elem_id) {
     $('.btn-digit').removeClass(classes.active);
 };
 
-var events = {
-    'starters' : ['touchstart', 'mousedown', 'drag'],
+window. events = {
+    'starters' : ['touchstart', 'mousedown', 'drag', 'onmousedown'],
     'enders' : ['touchend', 'touchcancel', 'mouseup'],
     'overs' : ['onmouseenter', 'touchenter', 'vmouseover', 'mouseover', 'mouseenter', 'hover', 'touchmove', 'vmousemove']
 };
 events.starters.map(function(event_type) {
     document.addEventListener(event_type, function(e) {
+        print('Starting');
         e.preventDefault();
         var target = closestEnabledButton(e.target);
         if (!target) { print('out of bounds'); return false;}
@@ -102,6 +88,7 @@ events.starters.map(function(event_type) {
     }, false);
 });
 events.enders.map(function(event_type) {
+    print('hello');
     $( document ).on(event_type, '#page2', function(e) {
         e.preventDefault();
         var target = closestEnabledButton(e.target);
@@ -122,8 +109,9 @@ events.overs.map(function(event_type) {
         return false;
     }, false);
 });
-if (true)
+if (true) {
 $('.btn-digit').hover(function(e) {
+    print('Hover');
     e.preventDefault();
     if (!drawing_pattern) return;
     var target = closestEnabledButton(e.target);
@@ -132,6 +120,7 @@ $('.btn-digit').hover(function(e) {
     addDigit(target.id);
     return false;
 }, false);
+}
 
 var findDigit = function(x, y, selector) {
     var digits = $(selector);
@@ -146,5 +135,5 @@ var findDigit = function(x, y, selector) {
             addDigit(digit.attr('id'));
         }
     }
-}
+};
 });
