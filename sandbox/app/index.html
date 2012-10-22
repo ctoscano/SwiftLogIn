@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+        <script src="my.js">
+        </script>
+        <script src="app.js">
+        </script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="page1">
+             <div data-role="content">
+                <form method="POST" enctype="multipart/form-data" action="http://measrme.com/test_image" style="overflow:hidden;height:1px;">
+                <input id="camera-input" type="file" accept="image/*;capture=camera" name="the_file"></input>
+                </form>
+                <a id="camera-btn" data-role="button" href="#">Camera
+                        </a>
+             </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="content">
+                <img style="width: 50px; float:right;" src="https://lh3.googleusercontent.com/-FJw50TGScJo/TrkNEPywrQI/AAAAAAAAABM/a7VaqAnlWw8/s502/DSC00294.JPG" />
+                <h2>
+                    Swipe to log in
+                </h2>
+                <div class=".log"></div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <a id="sw-1" class="btn-digit" data-role="button" href="#page2">1
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="sw-2" class="btn-digit" data-role="button" href="#page2">2
+                        </a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="sw-3" class="btn-digit" data-role="button" href="#page2">3
+                        </a>
+                    </div>
+                    <div class="ui-block-a">
+                        <a id="sw-4" class="btn-digit" data-role="button" href="#page2">4
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="sw-5" class="btn-digit" data-role="button" href="#page2">5
+                        </a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="sw-6" class="btn-digit" data-role="button" href="#page2">6
+                        </a>
+                    </div>
+                    <div class="ui-block-a">
+                    <a id="sw-7" class="btn-digit" data-role="button" href="#page2">7
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="sw-8" class="btn-digit" data-role="button" href="#page2">8
+                        </a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="sw-9" class="btn-digit" data-role="button" href="#page2">9
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //App custom javascript
+        </script>
+    </body>
+</html>
